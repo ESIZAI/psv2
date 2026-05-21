@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Placenta Shield - Holograma Científico Avanzado</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0px; overflow: hidden; background-color: #000;">
+
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false; trackingMethod: best; patternRatio: 0.75;" renderer="colorManagement: true; antialias: true; physicallyCorrectLights: true;">
+        
+        <a-light type="ambient" color="#223344" intensity="1.5"></a-light>
+        <a-light type="directional" color="#00E5FF" intensity="3" position="-2 3 2"></a-light>
+        <a-light type="directional" color="#FF00FF" intensity="1.5" position="2 -1 -1"></a-light>
+
+        <a-marker preset="hiro">
+            
+            <a-entity position="0 0.8 0" rotation="-30 0 0">
+                
+                <a-entity>
+                    <a-ring radius-inner="1.4" radius-outer="1.42" color="#00E5FF" opacity="0.6" side="double" rotation="90 0 0" animation="property: rotation; to: 90 360 0; loop: true; dur: 4000; easing: linear"></a-ring>
+                    <a-ring radius-inner="1.5" radius-outer="1.51" color="#FF00FF" opacity="0.4" side="double" rotation="0 90 0" animation="property: rotation; to: 360 90 0; loop: true; dur: 6000; easing: linear"></a-ring>
+                    <a-ring radius-inner="1.3" radius-outer="1.31" color="#FFFFFF" opacity="0.3" side="double" rotation="45 0 45" animation="property: rotation; to: 405 360 405; loop: true; dur: 8000; easing: linear"></a-ring>
+                </a-entity>
+
+                <a-entity position="1.3 0.6 0">
+                    <a-plane width="1.6" height="0.5" color="#000000" opacity="0.7" material="shader: flat;"></a-plane>
+                    <a-plane width="1.65" height="0.55" color="#00E5FF" opacity="0.5" material="wireframe: true;"></a-plane>
+                    <a-text value="SISTEMA CRISPR-Cas13\nDegradacion catalitica\nARNm FLT1" color="#00E5FF" scale="0.4 0.4 0.4" align="center" position="0 0 0.05"></a-text>
+                    <a-cylinder radius="0.003" height="1.2" color="#00E5FF" position="-0.8 -0.3 0" rotation="0 0 60"></a-cylinder>
+                </a-entity>
+
+                <a-entity position="-1.3 0.6 0">
+                    <a-plane width="1.6" height="0.5" color="#000000" opacity="0.7" material="shader: flat;"></a-plane>
+                    <a-plane width="1.65" height="0.55" color="#FF00FF" opacity="0.5" material="wireframe: true;"></a-plane>
+                    <a-text value="RECEPTOR VEGFR\nNeutralizacion sFlt-1\n[Ratio: < 38]" color="#FF00FF" scale="0.4 0.4 0.4" align="center" position="0 0 0.05"></a-text>
+                    <a-cylinder radius="0.003" height="1.2" color="#FF00FF" position="0.8 -0.3 0" rotation="0 0 -60"></a-cylinder>
+                </a-entity>
+
+                <a-entity position="0 -1.3 0">
+                    <a-plane width="2" height="0.3" color="#000000" opacity="0.7"></a-plane>
+                    <a-text value="BARRERA PLACENTARIA: EXCLUSION 150nm (SEGURIDAD 100%)" color="#FFFFFF" scale="0.35 0.35 0.35" align="center" position="0 0 0.05"></a-text>
+                    <a-cylinder radius="0.003" height="0.6" color="#FFFFFF" position="0 0.3 0"></a-cylinder>
+                </a-entity>
+
+                <a-entity animation="property: rotation; to: 360 360 0; loop: true; dur: 20000; easing: linear">
+
+                    <a-entity animation="property: rotation; to: 0 -360 360; loop: true; dur: 10000; easing: linear">
+                        <a-dodecahedron radius="0.18" color="#00E5FF" material="metalness: 0.8; roughness: 0.2; opacity: 0.9;"></a-dodecahedron>
+                        <a-icosahedron radius="0.20" color="#001A3D" material="wireframe: true;"></a-icosahedron>
+                        
+                        <a-torus-knot radius="0.1" tube="0.02" p="2" q="7" color="#FF00FF" material="metalness: 0.5; roughness: 0.1;" animation="property: scale; dir: alternate; to: 1.2 1.2 1.2; loop: true; dur: 1000;"></a-torus-knot>
+                    </a-entity>
+
+                    <a-sphere radius="0.55" color="#004466" material="metalness: 0.9; roughness: 0.1; opacity: 0.2; transparent: true; depthWrite: false;"></a-sphere>
+                    <a-sphere radius="0.54" color="#00E5FF" material="wireframe: true; opacity: 0.15;"></a-sphere>
+
+                    <a-entity position="0 0.55 0">
+                        <a-cone radius-bottom="0.02" radius-top="0.01" height="0.12" color="#001A3D" material="metalness: 0.8; roughness: 0.2;" position="0 0.06 0"></a-cone>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="-0.03 0.16 0" rotation="0 0 40"></a-cylinder>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="0.03 0.16 0" rotation="0 0 -40"></a-cylinder>
+                        <a-sphere radius="0.045" color="#FF3D00" material="metalness: 0.6; roughness: 0.3;" position="0 0.2 0" animation="property: scale; dir: alternate; to: 1.1 1.1 1.1; loop: true; dur: 500;"></a-sphere>
+                    </a-entity>
+
+                    <a-entity position="0 -0.55 0" rotation="180 0 0">
+                        <a-cone radius-bottom="0.02" radius-top="0.01" height="0.12" color="#001A3D" material="metalness: 0.8;" position="0 0.06 0"></a-cone>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="-0.03 0.16 0" rotation="0 0 40"></a-cylinder>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="0.03 0.16 0" rotation="0 0 -40"></a-cylinder>
+                        <a-sphere radius="0.045" color="#FF3D00" material="metalness: 0.6;" position="0 0.2 0" animation="property: position; dir: alternate; to: 0 0.22 0; loop: true; dur: 800;"></a-sphere>
+                    </a-entity>
+
+                    <a-entity position="0.55 0 0" rotation="0 0 -90">
+                        <a-cone radius-bottom="0.02" radius-top="0.01" height="0.12" color="#001A3D" material="metalness: 0.8;" position="0 0.06 0"></a-cone>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="-0.03 0.16 0" rotation="0 0 40"></a-cylinder>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="0.03 0.16 0" rotation="0 0 -40"></a-cylinder>
+                        <a-sphere radius="0.02" color="#00E5FF" material="wireframe: true" position="0 0.2 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 2000;"></a-sphere>
+                    </a-entity>
+
+                    <a-entity position="-0.55 0 0" rotation="0 0 90">
+                        <a-cone radius-bottom="0.02" radius-top="0.01" height="0.12" color="#001A3D" material="metalness: 0.8;" position="0 0.06 0"></a-cone>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="-0.03 0.16 0" rotation="0 0 40"></a-cylinder>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="0.03 0.16 0" rotation="0 0 -40"></a-cylinder>
+                        <a-sphere radius="0.045" color="#FF3D00" material="metalness: 0.6;" position="0 0.2 0"></a-sphere>
+                    </a-entity>
+
+                    <a-entity position="0 0 0.55" rotation="90 0 0">
+                        <a-cone radius-bottom="0.02" radius-top="0.01" height="0.12" color="#001A3D" material="metalness: 0.8;" position="0 0.06 0"></a-cone>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="-0.03 0.16 0" rotation="0 0 40"></a-cylinder>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="0.03 0.16 0" rotation="0 0 -40"></a-cylinder>
+                        <a-sphere radius="0.045" color="#FF3D00" material="metalness: 0.6;" position="0 0.2 0"></a-sphere>
+                    </a-entity>
+
+                    <a-entity position="0 0 -0.55" rotation="-90 0 0">
+                        <a-cone radius-bottom="0.02" radius-top="0.01" height="0.12" color="#001A3D" material="metalness: 0.8;" position="0 0.06 0"></a-cone>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="-0.03 0.16 0" rotation="0 0 40"></a-cylinder>
+                        <a-cylinder radius="0.008" height="0.1" color="#002255" material="metalness: 0.8;" position="0.03 0.16 0" rotation="0 0 -40"></a-cylinder>
+                        <a-sphere radius="0.045" color="#FF3D00" material="metalness: 0.6;" position="0 0.2 0"></a-sphere>
+                    </a-entity>
+
+                </a-entity> </a-entity> </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
